@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import data from './data'
+import List from './List'
 
 const App = () => {
   const [people, setPeople] = useState(data)
@@ -11,8 +12,9 @@ const App = () => {
     <>
       <div className="main">
         <section className="container">
-          <h1 className="title">5 Birthday Today</h1>
-          {people.map((item) => {
+          <h1 className="title">{people.length} Birthday Today</h1>
+          <List people={people} />
+          {/* {people.map((item) => {
             const { id, name, age, image } = item
             return (
               <div key={id} className="person">
@@ -25,7 +27,7 @@ const App = () => {
                 </div>
               </div>
             )
-          })}
+          })} */}
 
           <button className="btn" onClick={handleClick}>
             Clear all
